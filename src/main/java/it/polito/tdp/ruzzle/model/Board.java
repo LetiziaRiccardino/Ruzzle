@@ -15,7 +15,7 @@ import javafx.beans.property.StringProperty;
  */
 public class Board {
 	private List<Pos> positions;
-	private Map<Pos, StringProperty> cells;
+	private Map<Pos, StringProperty> cells; //StringProperty è una classe che wrappa una stringa. Ogni casella della matrice è un bottone. StringProperty è una stringa che mi permette di inserire il testo senza dover mettere setText: questa classe riflette i cambiamenti che avvengono nel codice: è un passaggio diretto tra modello e controller
 
 	private int size;
 
@@ -70,7 +70,7 @@ public class Board {
 		for(Pos p: this.positions) {
 			
 			//TODO: migliorare l'assegnazione secondo la probabiltà di ogni lettetera di essere utilizzata nella lingua italiana
-			int random = (int)(Math.random()*26) ;
+			int random = (int)(Math.random()*26) ; 
 			String letter = Character.toString((char)('A'+random)) ;
 			
 			//grazie al "binding" fatto in FXMLController, la "set" modifica direttamente il testo del botone collegato alla posizione corrente
