@@ -8,6 +8,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Model {
+	
 	private final int SIZE = 4;
 	private Board board ;
 	private List<String> dizionario ;
@@ -15,12 +16,10 @@ public class Model {
 
 	public Model() {
 		this.statusText = new SimpleStringProperty() ;
-		
 		this.board = new Board(SIZE);
 		DizionarioDAO dao = new DizionarioDAO() ;
 		this.dizionario = dao.listParola() ;
 		statusText.set(String.format("%d parole lette", this.dizionario.size())) ;
-	
 	}
 	
 	public void reset() {
@@ -36,12 +35,10 @@ public class Model {
 		return this.statusText;
 	}
 	
-
 	public final String getStatusText() {
 		return this.statusTextProperty().get();
 	}
 	
-
 	public final void setStatusText(final String statusText) {
 		this.statusTextProperty().set(statusText);
 	}
@@ -57,8 +54,7 @@ public class Model {
 		for(String parola: dao.listParola())
 			if(this.trovaParola(parola.toUpperCase())!=null)
 				result.add(parola);
-		return result;
-				
+		return result;		
 	}
 	
 
